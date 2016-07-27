@@ -16,10 +16,9 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '8.0'
 
   s.source_files = '${POD_NAME}/Classes/**/*'
-  s.source_files = '${POD_NAME}/Assets/**/*'
+  s.resource = '${POD_NAME}/Assets/**/*'
 
   s.dependency 'QMTargetRequest'
-  s.dependency 'QMProperties'
   s.dependency 'QMNavigator'
 
 
