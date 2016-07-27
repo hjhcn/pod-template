@@ -1,7 +1,13 @@
 use_frameworks!
 
+source 'https://github.com/CocoaPods/Specs.git'
+source 'http://git.dev.qianmi.com/adminapp/qmspec-ios.git'
+
 target '${POD_NAME}_Example' do
   pod '${POD_NAME}', :path => '../'
+
+  pod 'QMTargetRequest'
+  pod 'QMNavigator'
 
   target '${POD_NAME}_Tests' do
     inherit! :search_paths

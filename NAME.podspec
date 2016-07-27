@@ -18,7 +18,6 @@ Pod::Spec.new do |s|
   s.source_files = '${POD_NAME}/Classes/**/*'
   s.source_files = '${POD_NAME}/Assets/**/*'
 
-  s.dependency 'QMHelper'
   s.dependency 'QMTargetRequest'
   s.dependency 'QMProperties'
   s.dependency 'QMNavigator'
