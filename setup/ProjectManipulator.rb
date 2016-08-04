@@ -76,7 +76,7 @@ module Pod
 use_frameworks!
 target '#{test_target.name}' do
   pod '#{@configurator.pod_name}', :path => '../'
-  
+
   ${INCLUDED_PODS}
 end
 RUBY
@@ -121,6 +121,12 @@ RUBY
       if Dir.exist? project_folder + "/PROJECT"
         File.rename(project_folder + "/PROJECT", project_folder + "/" + @configurator.pod_name)
       end
+    end
+
+    def rename_project_entitlements
+        if Dir.exist? project_folder + "/PROJECT_Example.entitlements"
+          File.rename(project_folder + "/PROJECT_Example.entitlements", project_folder + "/" + @configurator.pod_name + "_Example.entitlements")
+        end
     end
 
     def replace_internal_project_settings
