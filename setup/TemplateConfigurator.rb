@@ -121,6 +121,7 @@ module Pod
       file_names.each do |file_name|
         text = File.read(file_name)
         text.gsub!("${POD_NAME}", @pod_name)
+        text.gsub!("${GIT_NAME}", @pod_name.downcase.delete("qm"))
         text.gsub!("${REPO_NAME}", @pod_name.gsub('+', '-'))
         text.gsub!("${USER_NAME}", user_name)
         text.gsub!("${USER_EMAIL}", user_email)
