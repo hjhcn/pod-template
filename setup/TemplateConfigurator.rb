@@ -122,9 +122,9 @@ module Pod
         text = File.read(file_name)
         text.gsub!("${POD_NAME}", @pod_name)
         downcase_pod_name = @pod_name.downcase
-        if downcase_pod_name.index("qm") == 0 && downcase_pod_name.length > 2 {
-          text.gsub!("${GIT_NAME}", @pod_name.downcase[2,downcase_pod_name.length-1])
-        }
+        if downcase_pod_name.index("qm") == 0 && downcase_pod_name.length > 2
+          text.gsub!("${GIT_NAME}", downcase_pod_name[2,downcase_pod_name.length-1])
+        end
         text.gsub!("${REPO_NAME}", @pod_name.gsub('+', '-'))
         text.gsub!("${USER_NAME}", user_name)
         text.gsub!("${USER_EMAIL}", user_email)
