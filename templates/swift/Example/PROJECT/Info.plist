@@ -27,7 +27,7 @@
 			<string>com.qianmi</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>PROJECT</string>
+				<string>SCHEME</string>
 			</array>
 		</dict>
 	</array>

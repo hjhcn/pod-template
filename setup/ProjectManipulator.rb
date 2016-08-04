@@ -23,6 +23,8 @@ module Pod
         "TODAYS_DATE" => @configurator.date,
         "TODAYS_YEAR" => @configurator.year,
         "PROJECT" => @configurator.pod_name,
+        "SCHEME" => @configurator.pod_name.downcase,
+        "GIT_NAME" => @configurator.pod_name.downcase.Replace("qm",""),
         "CPD" => @prefix
       }
       replace_internal_project_settings

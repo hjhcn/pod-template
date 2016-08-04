@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        Entrance.navigationMap("PROJECT")
+        Entrance.navigationMap("SCHEME")
         Environment.resume()
         return true
     }
