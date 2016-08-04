@@ -124,7 +124,7 @@ RUBY
     end
 
     def rename_project_entitlements
-        if Dir.exist? project_folder + "/PROJECT_Example.entitlements"
+        if File.exist? project_folder + "/PROJECT_Example.entitlements"
           File.rename(project_folder + "/PROJECT_Example.entitlements", project_folder + "/" + @configurator.pod_name + "_Example.entitlements")
         end
     end
