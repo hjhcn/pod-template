@@ -88,6 +88,9 @@ RUBY
     end
 
     def rename_files
+      # 修改App group文件名
+      File.rename(project_folder + "/PROJECT_Example.entitlements", project_folder + "/" + @configurator.pod_name + "_Example.entitlements")
+
       # shared schemes have project specific names
       scheme_path = project_folder + "/PROJECT.xcodeproj/xcshareddata/xcschemes/"
       File.rename(scheme_path + "PROJECT.xcscheme", scheme_path +  @configurator.pod_name + "-Example.xcscheme")
@@ -121,12 +124,6 @@ RUBY
       if Dir.exist? project_folder + "/PROJECT"
         File.rename(project_folder + "/PROJECT", project_folder + "/" + @configurator.pod_name)
       end
-    end
-
-    def rename_project_entitlements
-        if File.exist? project_folder + "/PROJECT_Example.entitlements"
-          File.rename(project_folder + "/PROJECT_Example.entitlements", project_folder + "/" + @configurator.pod_name + "_Example.entitlements")
-        end
     end
 
     def replace_internal_project_settings
