@@ -24,7 +24,7 @@ module Pod
         "TODAYS_YEAR" => @configurator.year,
         "PROJECT" => @configurator.pod_name,
         "SCHEME" => @configurator.pod_name.downcase,
-        "GIT_NAME" => @configurator.pod_name.downcase.delete "qm",
+        "GIT_NAME" => @configurator.pod_name.downcase.delete("qm"),
         "CPD" => @prefix
       }
       replace_internal_project_settings
