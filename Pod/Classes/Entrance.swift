@@ -12,7 +12,7 @@ import QMNavigator
 
 public struct Entrance {
     
-    public static func navigationMap(scheme: String) {
+    public static func navigationMap(_ scheme: String) {
         
         CurrentScheme = scheme
         
