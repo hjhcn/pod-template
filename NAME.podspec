@@ -13,13 +13,13 @@ Pod::Spec.new do |s|
   s.author           = { '${USER_NAME}' => '${USER_EMAIL}' }
   s.source           = { :git => 'http://git.dev.qianmi.com/adminapp/${GIT_NAME}-ios.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = '${POD_NAME}/Classes/**/*'
-  s.resource = '${POD_NAME}/Assets/**/*'
+  s.resource = '${POD_NAME}/Assets/*'
 
+  s.dependency 'QMTheme'
   s.dependency 'QMTargetRequest'
-  s.dependency 'QMNavigator'
 
 
 end
