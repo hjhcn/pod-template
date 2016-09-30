@@ -9,21 +9,45 @@
 
 import URLNavigator
 import QMNavigator
+import React
 
-public struct Entrance {
+public struct Entrance{
 
     public static func navigationMap(_ scheme: String) {
 
-        CurrentScheme = scheme
+        Navigator.map("\(scheme)://host") { (url, values) -> Bool in
 
-        Navigator.map("\(scheme)://host") { (URL, values) -> Bool in
-            print("enter \(scheme)://host")
-            //let storyBoard = UIStoryboard(name: "storyBoard", bundle: NSBundle(forClass: AClass.self  ))
-            //let controller = storyBoard.instantiateViewControllerWithIdentifier("controller id")
-            //Navigator.qm_present(controller)
+            let mockData:Dictionary = ["scores":
+                [
+                    ["name":"Alex", "value":"42"],
+                    ["name":"Joel", "value":"10"]
+                ]
+            ]
+
+            #if DEBUG
+                let jsCodeLocation = URL(string: "http://localhost:8081/index.ios.bundle?platform=ios")
+            #else
+                let jsCodeLocation = Bundle(for: ClassForBundle.self).url(forResource: "main", withExtension: "jsbundle")
+            #endif
+
+            let rootView = RCTRootView(
+                bundleURL: jsCodeLocation,
+                moduleName: "PROJECT",
+                initialProperties: mockData as [NSObject : Any],
+                launchOptions: nil
+            )
+
+            let vc = UIViewController()
+            vc.view = rootView
+
+            Navigator.qm_present(vc)
+
+
             return true
         }
-
     }
+}
+
+fileprivate class ClassForBundle {
 
 }

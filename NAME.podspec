@@ -19,7 +19,11 @@ Pod::Spec.new do |s|
   s.resource = '${POD_NAME}/Assets/*'
 
   s.dependency 'QMTheme'
-  s.dependency 'QMTargetRequest'
-
+  s.dependency 'QMNavigator'
+  s.dependency 'React/Core'
+  s.dependency 'React/RCTText'
+  s.dependency 'React/RCTWebSocket'
+  s.dependency 'React/RCTNetwork'
+  s.dependency 'React/RCTImage'
 
 end

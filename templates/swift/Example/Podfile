@@ -8,7 +8,18 @@ target '${POD_NAME}_Example' do
   pod '${POD_NAME}', :path => '../'
 
   pod 'QMTheme'
-  pod 'QMTargetRequest'
+    pod 'QMNavigator'
+    
+    # Your 'node_modules' directory is probably in the root of your project,
+    # but if not, adjust the `:path` accordingly
+    pod 'React', :path => '../../node_modules/react-native', :subspecs => [
+    'Core',
+    'RCTText',
+    'RCTWebSocket', # needed for debugging
+    'RCTNetwork',
+    'RCTImage'
+    # Add any other subspecs you want to use in your project
+    ]
 
   target '${POD_NAME}_Tests' do
     inherit! :search_paths
