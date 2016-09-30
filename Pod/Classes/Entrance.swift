@@ -11,18 +11,19 @@ import URLNavigator
 import QMNavigator
 
 public struct Entrance {
-    
+
     public static func navigationMap(_ scheme: String) {
-        
+
         CurrentScheme = scheme
-        
+
         Navigator.map("\(scheme)://host") { (URL, values) -> Bool in
+            print("enter \(scheme)://host")
             //let storyBoard = UIStoryboard(name: "storyBoard", bundle: NSBundle(forClass: AClass.self  ))
             //let controller = storyBoard.instantiateViewControllerWithIdentifier("controller id")
             //Navigator.qm_present(controller)
             return true
         }
-        
+
     }
-    
+
 }
